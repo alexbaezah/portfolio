@@ -1,4 +1,15 @@
+<h2> publicaciones</h2>
+
 <% @posts.each do |post| %>
 <%= post.title %>
 <%= post.body %>
+<% end %>
+
+<br> 
+
+<h2> skills </h2>
+
+<% @skills.each do |skill| %>
+<%= skill.title %>
+<%= skill.percent_utilized %>
 <% end %>
