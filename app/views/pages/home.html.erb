@@ -13,3 +13,13 @@
 <%= skill.title %>
 <%= skill.percent_utilized %>
 <% end %>
+
+<h2> books </h2>
+
+<% @books.each do |book| %>
+<%= book.title %> 
+<%= book.subtitle %>
+<%= book.body %> 
+<%= book.main_image %> 
+<%= book.thumb_image %>
+<% end %> 
