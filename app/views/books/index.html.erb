@@ -1,0 +1,8 @@
+<h1> Book items</h1>
+<% @book_items.each do |book_item| %>
+<%= book_item.title %>
+<%= book_item.subtitle %>
+<%= book_item.body %> 
+<%= image_tag book_item.thumb_image %>
+
+<% end %>
