@@ -19,4 +19,9 @@
 <%= link_to "crear book nuevo", new_book_path %>
 
 <%= link_to "editar", edit_book_path(book_item.id) %>
+
+<%= link_to "borrar publicación", 
+book_path(book_item), 
+method: :delete, data: { confirm: "¿estás seguro?"}  %>
+
 <% end %>

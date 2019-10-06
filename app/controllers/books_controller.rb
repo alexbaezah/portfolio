@@ -38,6 +38,13 @@ class BooksController < ApplicationController
             end
         end
     end
+
+    def destroy 
+        @book_item.destroy 
+        respond_to do |format| 
+            format.html { redirect_to books_url, notice: "El book ha sido borrado"}
+        end
+    end
     
 
     
