@@ -1,6 +1,15 @@
 class BooksController < ApplicationController
+    before_action :set_book, only: [:show, :edit, :update, :destroy]
+    
+    
     def index 
         @book_items = Book.all
+    end
+
+    def show 
+    end
+
+    def edit 
     end
     
     def new 
@@ -18,9 +27,27 @@ class BooksController < ApplicationController
             end
         end
     end
-end
 
+
+    def update 
+        respond_to do |format| 
+            if @book_item.update(book_params)
+                format.html { redirect_to books_path, notice: 'Se ha actualizado el book'}
+            else 
+                format.html {render :edit}
+            end
+        end
+    end
+    
+
+    
+       
 private 
+    def set_book
+        @book_item = Book.find(params[:id])
+    end
+
     def book_params 
         params.require(:book).permit(:title, :subtitle, :body)
     end
+end

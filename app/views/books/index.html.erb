@@ -1,8 +1,18 @@
 <h1> Book items</h1>
-<% @book_items.each do |book_item| %>
-<%= book_item.title %>
-<%= book_item.subtitle %>
-<%= book_item.body %> 
-<%= image_tag book_item.thumb_image %>
 
+
+
+<% @book_items.each do |book_item| %>
+<br>
+<%= book_item.title %>
+<br>
+<%= book_item.subtitle %>
+<br>
+<%= book_item.body %> 
+<br> 
+<%= image_tag book_item.thumb_image unless book_item.thumb_image.nil?%>
+
+<%= link_to "crear book nuevo", new_book_path %>
+
+<%= link_to "editar", edit_book_path(book_item.id) %>
 <% end %>
