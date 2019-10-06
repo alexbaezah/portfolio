@@ -2,8 +2,12 @@
 
 
 
+
 <% @book_items.each do |book_item| %>
 <br>
+
+<%= link_to book_item.title, book_path(book_item.id) %>
+
 <%= book_item.title %>
 <br>
 <%= book_item.subtitle %>
