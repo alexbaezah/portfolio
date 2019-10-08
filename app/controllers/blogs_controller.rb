@@ -27,7 +27,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
 
     respond_to do |format|
-      if @blog.save
+      if @blog.save 
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
@@ -60,6 +60,13 @@ class BlogsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def toggle_status
+    if @blog.status? = nil 
+     @blog.draft!
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
